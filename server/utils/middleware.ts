@@ -1,5 +1,5 @@
 import { User } from "./../repositories/users";
-import { getApiKey, getUser, getUserByApiKey } from "../repositories/users";
+import { getUser, getUserByApiKey } from "../repositories/users";
 import { decodeToken } from "./jwt";
 import { CompatibilityEvent } from "h3";
 

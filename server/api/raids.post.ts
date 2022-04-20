@@ -1,7 +1,5 @@
 import { createRaid, Raid } from "./../repositories/raids";
 import { getUserFromApiKeyMiddleware } from "../utils/middleware";
-import { getApiKey, setApiKey } from "../repositories/users";
-import { nanoid } from "../utils/nanoid";
 import { useBody } from "h3";
 
 export default defineEventHandler(async (event) => {

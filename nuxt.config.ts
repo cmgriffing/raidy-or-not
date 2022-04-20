@@ -8,7 +8,16 @@ export default defineNuxtConfig({
     preset: "vercel",
   },
   build: {
-    transpile: ["primevue", "dayjs"],
+    transpile: [
+      "primevue",
+      "dayjs",
+      "axios",
+      "lodash",
+      "jsonwebtoken",
+      "knex",
+      "case",
+      "nanoid",
+    ],
   },
   publicRuntimeConfig: {
     TWITCH_CLIENT_ID: process.env.TWITCH_CLIENT_ID,

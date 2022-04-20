@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { User } from "../repositories/users";
 
-const TOKEN_SIGNING_KEY = "TOTALLY SECRET MAAAAAN";
+const { TOKEN_SIGNING_KEY = "TOTALLY A SECRET" } = process.env;
 
 export function decodeToken(token: string) {
   return jwt.verify(token, TOKEN_SIGNING_KEY);

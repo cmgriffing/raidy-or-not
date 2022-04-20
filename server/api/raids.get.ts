@@ -1,6 +1,4 @@
 import { getUserFromTokenMiddleware } from "../utils/middleware";
-import { getApiKey, setApiKey } from "../repositories/users";
-import { nanoid } from "../utils/nanoid";
 import {
   getIncomingRaids,
   getOutgoingRaids,
