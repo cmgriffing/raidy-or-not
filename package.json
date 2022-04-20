@@ -1,8 +1,9 @@
 {
   "scripts": {
     "dev": "nuxi dev",
-    "build": "nuxi build",
+    "build": "nuxi build && yarn run api-knex:prod migrate:latest",
     "start": "node .output/server/index.mjs",
+    "api-knex:prod": "NODE_ENV=production yarn run api-knex",
     "api-knex": "TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\" }' knex --knexfile=./knexfile.ts"
   },
   "devDependencies": {

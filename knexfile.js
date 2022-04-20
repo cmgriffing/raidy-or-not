@@ -37,12 +37,8 @@ const config = {
   },
 
   production: {
-    client: "pg",
-    connection: {
-      database: "my_db",
-      user: "username",
-      password: "password",
-    },
+    client: "cockroachdb",
+    connection: process.env.DB_STRING,
     pool: {
       min: 2,
       max: 10,
