@@ -5,7 +5,7 @@ import { DatabaseRecord } from "../types/db";
 const { DB_STRING } = process.env;
 
 export const database = knex({
-  client: "pg",
+  client: !DB_STRING ? "pg" : "cockroachdb",
   connection: DB_STRING || {
     host: "127.0.0.1",
     user: "postgres",
