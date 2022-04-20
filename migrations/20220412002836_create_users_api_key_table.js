@@ -11,7 +11,8 @@ async function up(knex) {
     table.integer("created_at").unsigned().notNullable();
     table.integer("modified_at").unsigned().notNullable();
 
-    table.specificType("api_key", "char(24)").notNullable();
+    table.specificType("api_key", "char(24)");
+    // .notNullable();
     table.index(["api_key"]);
   });
 }
