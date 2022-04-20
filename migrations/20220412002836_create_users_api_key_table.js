@@ -1,6 +1,6 @@
 async function up(knex) {
   return knex.schema.createTable("users_api_key", function (table) {
-    table.specificType("twitch_id", "char(32)");
+    table.string("twitch_id").notNullable();
     table
       .foreign("twitch_id")
       .references("twitch_id")

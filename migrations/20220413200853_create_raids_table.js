@@ -1,6 +1,6 @@
 async function up(knex) {
   return knex.schema.createTable("raids", function (table) {
-    table.specificType("twitch_id", "char(32)");
+    table.specificType("twitch_id", "char(32)").notNullable();
     table
       .foreign("twitch_id")
       .references("twitch_id")
@@ -8,9 +8,9 @@ async function up(knex) {
       .onUpdate("CASCADE")
       .onDelete("CASCADE");
 
-    table.specificType("from_twitch_channel", "char(32)");
+    table.specificType("from_twitch_channel", "char(32)").notNullable();
     table.index(["from_twitch_channel"]);
-    table.specificType("to_twitch_channel", "char(32)");
+    table.specificType("to_twitch_channel", "char(32)").notNullable();
     table.index(["to_twitch_channel"]);
 
     table.integer("created_at").unsigned().notNullable();
