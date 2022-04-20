@@ -217,7 +217,6 @@ import { ApiPath } from "@/types/api";
 import { Raid } from "@/server/repositories/raids";
 import { User } from "@/server/repositories/users";
 import jwtDecode from "jwt-decode";
-import { useToast } from "primevue/usetoast";
 import WindowsIcon from "@/assets/windows.svg";
 import MacosIcon from "@/assets/macos.svg";
 import LinuxIcon from "@/assets/linux.svg";
