@@ -4,6 +4,9 @@ const lifecycle = process.env.npm_lifecycle_event;
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
+  nitro: {
+    preset: "vercel",
+  },
   publicRuntimeConfig: {
     TWITCH_CLIENT_ID: process.env.TWITCH_CLIENT_ID,
     TWITCH_REDIRECT_URL: process.env.TWITCH_REDIRECT_URL,
