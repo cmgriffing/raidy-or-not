@@ -1,6 +1,6 @@
 async function up(knex) {
   return knex.schema.createTable("users", function (table) {
-    table.specificType("twitch_id", "char(32)").primary();
+    table.specificType("twitch_id", "char(32)").nonNullable().primary();
     table.specificType("twitch_name", "char(32)").notNullable();
 
     table.integer("created_at").unsigned().notNullable();
