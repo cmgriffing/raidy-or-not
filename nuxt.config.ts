@@ -14,7 +14,11 @@ export default defineNuxtConfig({
   privateRuntimeConfig: {
     TWITCH_CLIENT_SECRET: process.env.TWITCH_CLIENT_SECRET,
   },
-  plugins: ["@/plugins/pinia.client.ts"],
+  plugins: [
+    "@/plugins/pinia.client.ts",
+    "@/plugins/primevue.ts",
+    "@/plugins/dayjs",
+  ],
   modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss"],
   css: [
     "primevue/resources/themes/vela-purple/theme.css",

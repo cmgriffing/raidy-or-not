@@ -222,8 +222,6 @@ import MacosIcon from "@/assets/macos.svg";
 import LinuxIcon from "@/assets/linux.svg";
 import { Release } from "@/types/github";
 
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
 
 const { data: releasesData } = await useFetch(
