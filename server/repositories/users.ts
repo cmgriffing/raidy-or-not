@@ -1,6 +1,5 @@
 import { database, transformToData, transformToModel } from "../utils/knex";
 import { TableName } from "../types/db";
-import pick from "lodash/pick";
 import { nanoid } from "../utils/nanoid";
 
 export interface User {
@@ -12,24 +11,24 @@ export interface User {
 }
 
 export async function createUser(userData: User) {
+  const { twitchId, twitchName, createdAt, modifiedAt, email } = userData;
+
   const user = await database(TableName.Users).insert(
     transformToData({
-      ...pick(userData, "twitchId", "twitchName", "createdAt", "modifiedAt"),
+      twitchId,
+      twitchName,
+      createdAt,
+      modifiedAt,
     })
   );
 
   const userEmail = await database(TableName.UsersEmail).insert(
-    transformToData({
-      ...pick(userData, "twitchId", "email", "createdAt", "modifiedAt"),
-    })
+    transformToData({ twitchId, email, createdAt, modifiedAt })
   );
 
   const apiKey = nanoid();
   const userApiKey = await database(TableName.UsersApiKey).insert(
-    transformToData({
-      ...pick(userData, "twitchId", "createdAt", "modifiedAt"),
-      apiKey,
-    })
+    transformToData({ twitchId, createdAt, modifiedAt, apiKey })
   );
 }
 

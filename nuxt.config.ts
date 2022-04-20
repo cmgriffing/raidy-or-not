@@ -12,7 +12,6 @@ export default defineNuxtConfig({
       "primevue",
       "dayjs",
       "axios",
-      "lodash/pick",
       "jsonwebtoken",
       "knex",
       "case",
