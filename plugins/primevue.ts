@@ -9,7 +9,6 @@ import Badge from "primevue/badge";
 import ToastService from "primevue/toastservice";
 import Toast from "primevue/toast";
 import BadgeDirective from "primevue/badgedirective";
-import { useToast } from "primevue/usetoast";
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(PrimeVue, { ripple: true });
@@ -22,5 +21,4 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component("Menu", Menu);
   nuxtApp.vueApp.component("Badge", Badge);
   nuxtApp.vueApp.directive("badge", BadgeDirective);
-  nuxtApp.vueApp.provide("useToast", useToast);
 });

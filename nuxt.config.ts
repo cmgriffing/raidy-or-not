@@ -7,6 +7,9 @@ export default defineNuxtConfig({
   nitro: {
     preset: "vercel",
   },
+  build: {
+    transpile: ["primevue", "dayjs"],
+  },
   publicRuntimeConfig: {
     TWITCH_CLIENT_ID: process.env.TWITCH_CLIENT_ID,
     TWITCH_REDIRECT_URL: process.env.TWITCH_REDIRECT_URL,
@@ -14,11 +17,7 @@ export default defineNuxtConfig({
   privateRuntimeConfig: {
     TWITCH_CLIENT_SECRET: process.env.TWITCH_CLIENT_SECRET,
   },
-  plugins: [
-    "@/plugins/pinia.client.ts",
-    "@/plugins/primevue.ts",
-    "@/plugins/dayjs",
-  ],
+  plugins: ["@/plugins/pinia.client.ts", "@/plugins/primevue.ts"],
   modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss"],
   css: [
     "primevue/resources/themes/vela-purple/theme.css",

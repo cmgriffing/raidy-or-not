@@ -217,11 +217,14 @@ import { ApiPath } from "@/types/api";
 import { Raid } from "@/server/repositories/raids";
 import { User } from "@/server/repositories/users";
 import jwtDecode from "jwt-decode";
+import { useToast } from "primevue/usetoast";
 import WindowsIcon from "@/assets/windows.svg";
 import MacosIcon from "@/assets/macos.svg";
 import LinuxIcon from "@/assets/linux.svg";
 import { Release } from "@/types/github";
 
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
 
 const { data: releasesData } = await useFetch(
